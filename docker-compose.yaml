@@ -12,18 +12,17 @@ services:
       - ./db:/var/lib/mysql
 
   frontend-app:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: cl-exam-frontend
     ports:
-      - 5001:80
+      - 5002:80
     depends_on:
       - backend-app
+      - db
 
   backend-app:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: cl-exam-backend
+    ports:
+      - 3000:3000
     depends_on:
       - db
     environment:

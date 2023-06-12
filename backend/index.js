@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(
     cors({
-      origin: ['http://localhost:5001', 'http://localhost:80', 'http://frontend-app:5001', 'http://frontend-app:80'],
+      origin: ['http://localhost:5002', 'http://localhost:80', 'http://frontend-app:5002', 'http://frontend-app:80'],
     })
   );
 app.use('/', routes());

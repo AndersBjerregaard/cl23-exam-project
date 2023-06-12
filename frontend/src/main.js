@@ -6,10 +6,10 @@ import router from './router';
 
 const config = {
   development: {
-    api: 'http://localhost:3000',
+    api: 'http://127.0.0.1:3000',
   },
   production: {
-    api: 'http://backend-app:3000',
+    api: 'http://127.0.0.1:3000',
   },
 };
 
