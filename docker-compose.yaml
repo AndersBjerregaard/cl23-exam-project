@@ -4,12 +4,17 @@ services:
   db:
     image: mariadb:11
     environment:
-      MARIADB_USER: 'example-user-kenneth'
-      MARIADB_PASSWORD: 'my_cool_secret'
+      MARIADB_USER: 'zay_prod'
+      MARIADB_PASSWORD: 'ding_dong_sjask'
       MARIADB_ROOT_PASSWORD: 'root'
       MARIADB_DATABASE: 'zay_db'
     volumes:
       - ./db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
 
   frontend-app:
     image: cl-exam-frontend
